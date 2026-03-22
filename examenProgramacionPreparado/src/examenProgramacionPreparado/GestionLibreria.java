@@ -143,7 +143,9 @@ public class GestionLibreria {
 	    if (listaSocios.isEmpty()) {
 	    	System.out.println("No hay socios registrados."); return; 
 	    }
-	    listaSocios.forEach(System.out::println);
+	    for (Socio sociosEnLista : listaSocios) {
+	        System.out.println(sociosEnLista);
+	    }
 	}
 
 	// Listar libros
@@ -151,18 +153,20 @@ public class GestionLibreria {
 	    if (listaLibros.isEmpty()) {
 	    	System.out.println("No hay libros registrados."); return; 
 	    }
-	    listaLibros.forEach(System.out::println);
+	    for (Libro librosEnLista : listaLibros) {
+	        System.out.println(librosEnLista);
+	    }
 	}
 
 	// Listar libros disponibles
 	public void listarLibrosDisponibles() {
-	    boolean hay = false;
+	    boolean librosDisponibles = false;
 	    for (Libro l : listaLibros) {
 	        if (l.ejemplaresDisponibles()) {
-	        	System.out.println(l); hay = true; 
+	        	System.out.println(l); librosDisponibles = true; 
 	        }
 	    }
-	    if (!hay) {
+	    if (!librosDisponibles) {
 	    	System.out.println("No hay libros disponibles.");
 	    } 
 	}
@@ -172,7 +176,9 @@ public class GestionLibreria {
 	    if (listaPrestamos.isEmpty()) {
 	    	System.out.println("No hay préstamos registrados."); return; 
 	    }
-	    listaPrestamos.forEach(System.out::println);
+	    for (Prestamo p : listaPrestamos) {
+	        System.out.println(p);
+	    }
 	}	
 }
 	
